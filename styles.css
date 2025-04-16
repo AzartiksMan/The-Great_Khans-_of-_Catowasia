@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'Pehlevi';
+  src: url('./fonts/pehlevi_regular.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: 'Pehlevi', sans-serif;
+  --color: rgb(212, 188, 50);
+}
+
+.box {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(./images/—Pngtree—islamic\ green\ background\ vector_1920194.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+}
+
+.box__text {
+  font-weight: 500;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  color: var(--color)
+}
+
+.cats {
+  display: grid;
+  grid-template-columns: repeat(4, 180px);
+  gap: 40px 40px
+}
+
+.cat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 280px;
+  width: 180px;
+  border-radius: 20px;
+
+  transition: all 0.5s ease;
+  
+  position: relative;
+  z-index: 0;
+}
+
+.cat:hover {
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+.cat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url(./images/background-best.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+
+  transition: all 0.5s ease;
+  z-index: -1;
+
+  transform-origin: top;
+}
+
+.cat:hover::before {
+  transform: scaleY(1.1);
+}
+
+.cat__image {
+  width: 50%;
+  height: auto;
+  margin-top: 45px;
+  display: block;
+  border: 3px solid var(--color);
+  border-radius: 100%;
+  transition: all 0.7s ease;
+}
+.cat:hover .cat__image{
+  transform: scale(1.2); 
+  border-radius: 15px;
+}
+
+.cat__text {
+  display: flex;
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color);
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.cat__subtext {
+  margin-top: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.cat:hover .cat__subtext {
+  opacity: 1;
+  transform: translateY(0);
+}
